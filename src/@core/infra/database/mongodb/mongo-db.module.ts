@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common'
 import { MongooseModule } from '@nestjs/mongoose'
-import { IDatabaseService } from 'src/core/abstracts/database-service.abstract'
+import { IDatabaseService } from 'src/@core/abstracts/database-service.abstract'
 
-import { DATA_BASE_CONFIGURATION } from '../../../../config'
-import { MongoDataServices } from './mongo-data-services.service'
+import { DATA_BASE_CONFIGURATION } from '../../../../@config'
+import { MongoDBService } from './mongo-db.service'
 import { CitySchema, City, ProvinceSchema, Province } from './schemas'
 
 @Module({
@@ -17,7 +17,7 @@ import { CitySchema, City, ProvinceSchema, Province } from './schemas'
   providers: [
     {
       provide: IDatabaseService,
-      useClass: MongoDataServices
+      useClass: MongoDBService
     }
   ],
   exports: [IDatabaseService]

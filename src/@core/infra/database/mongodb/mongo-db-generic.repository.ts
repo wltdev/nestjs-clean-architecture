@@ -1,5 +1,5 @@
 import { Model } from 'mongoose'
-import { IGenericRepository } from 'src/core/abstracts/generic-repository.abstract'
+import { IGenericRepository } from 'src/@core/abstracts/generic-repository.abstract'
 
 export class MongoDBGenericRepository<T> implements IGenericRepository<T> {
   constructor(private repository: Model<T>, private populateOnFind: string[] = []) {}
