@@ -1,20 +1,47 @@
-import { Test, TestingModule } from '@nestjs/testing';
-import { CitiesController } from './cities.controller';
-import { CitiesService } from './cities.service';
+import { Test, TestingModule } from '@nestjs/testing'
+
+import { City } from '../@core/entities/city.entity'
+import { GetAllCitiesUseCase } from '../useCases/cities/GetAllCitiesUseCase/GetAllCitiesUseCase'
+import { cityStub } from './../useCases/cities/stubs/cities.stub'
+import { CitiesController } from './cities.controller'
+
+jest.mock('../useCases/cities/GetAllCitiesUseCase/GetAllCitiesUseCase.ts')
 
 describe('CitiesController', () => {
-  let controller: CitiesController;
+  let controller: CitiesController
+  let getAllCitiesUseCase: GetAllCitiesUseCase
 
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
+    const moduleRef: TestingModule = await Test.createTestingModule({
       controllers: [CitiesController],
-      providers: [CitiesService],
-    }).compile();
+      providers: [GetAllCitiesUseCase]
+    }).compile()
 
-    controller = module.get<CitiesController>(CitiesController);
-  });
+    controller = moduleRef.get<CitiesController>(CitiesController)
+    getAllCitiesUseCase = moduleRef.get<GetAllCitiesUseCase>(GetAllCitiesUseCase)
+  })
 
-  it('should be defined', () => {
-    expect(controller).toBeDefined();
-  });
-});
+  it('controller should be defined', () => {
+    expect(controller).toBeDefined()
+  })
+
+  it('getAllCitiesUseCase should be defined', () => {
+    expect(getAllCitiesUseCase).toBeDefined()
+  })
+
+  describe('getAll', () => {
+    let cities: City[]
+
+    beforeAll(async () => {
+      cities = await controller.getAll()
+    })
+
+    it('should be able to call execute function', () => {
+      expect(getAllCitiesUseCase.execute).toHaveBeenCalled()
+    })
+
+    it('should return cities', () => {
+      expect(cities).toEqual([cityStub()])
+    })
+  })
+})
