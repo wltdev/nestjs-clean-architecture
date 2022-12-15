@@ -4,23 +4,22 @@ import { Model } from 'mongoose'
 import { IDatabaseService } from 'src/core/abstracts/database-service.abstract'
 
 import { MongoDBGenericRepository } from './mongo-db-generic.repository'
-import { City, CityDocument, Province, ProvinceDocument } from './schemas'
+import { City, Province } from './schemas'
 
 @Injectable()
 export class MongoDBServices implements IDatabaseService, OnApplicationBootstrap {
-  // cities: MongoDBGenericRepository<City>
-  cities: MongoDBGenericRepository<City>
   provinces: MongoDBGenericRepository<Province>
+  cities: MongoDBGenericRepository<City>
 
   constructor(
-    @InjectModel(City.name)
-    private cityRepository: Model<CityDocument>,
     @InjectModel(Province.name)
-    private provinceRepository: Model<ProvinceDocument>
+    private provinceRepository: Model<Province>,
+    @InjectModel(City.name)
+    private cityRepository: Model<City>
   ) {}
 
   onApplicationBootstrap() {
-    this.provinces = new MongoDBGenericRepository<Province>(this.provinceRepository, [])
+    this.provinces = new MongoDBGenericRepository<Province>(this.provinceRepository)
     this.cities = new MongoDBGenericRepository<City>(this.cityRepository, ['pronvice'])
   }
 }
