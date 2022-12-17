@@ -14,7 +14,4 @@ export class User {
   foot: string
   facebook_id: string
   is_completed: boolean
-
-  public readonly createdAt!: Date
-  public readonly updatedAt!: Date
 }

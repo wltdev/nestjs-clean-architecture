@@ -1,5 +1,6 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import * as mongoose from 'mongoose'
+
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
 import { Province } from './province.schema'
 

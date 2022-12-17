@@ -1,13 +1,11 @@
 import { Organization } from './organization.entity'
 import { User } from './user.entity'
 
-export class OrganizationPlayer {
+export class OrganizationUser {
   user: User
   organization: Organization
   status: string
-  admin: boolean
+  permision: string
   number: string
   position: string
-  readonly createdAt: Date
-  readonly updatedAt: Date
 }

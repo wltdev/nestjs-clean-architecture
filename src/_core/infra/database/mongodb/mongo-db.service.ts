@@ -1,7 +1,9 @@
+import { Model } from 'mongoose'
+
 import { Injectable, OnApplicationBootstrap } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
-import { Model } from 'mongoose'
-import { IDatabaseService } from 'src/@core/abstracts/database-service.abstract'
+
+import { IDatabaseService } from '@core/abstracts/database-service.abstract'
 
 import { MongoDBGenericRepository } from './mongo-db-generic.repository'
 import { City, Province } from './schemas'

@@ -10,6 +10,11 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": ["src/*"],
+      "@core/*": ["src/_core/*"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,

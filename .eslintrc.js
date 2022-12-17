@@ -30,6 +30,9 @@ module.exports = {
         newlinesBetween: 'always', // new line between groups
         groups: [
           'module',
+          '/^(@nestjs|@faker-js)/',
+          '/^@core/',
+          '/^@/',
           ['parent', 'sibling', 'index']
         ],
         alphabetize: { order: 'asc', ignoreCase: true }

@@ -1,5 +1,6 @@
 import { Controller, Get } from '@nestjs/common'
-import { GetAllCitiesUseCase } from 'src/useCases/cities/GetAllCitiesUseCase/GetAllCitiesUseCase'
+
+import { GetAllCitiesUseCase } from '@/useCases/cities/GetAllCitiesUseCase/GetAllCitiesUseCase'
 
 @Controller('api/cities')
 export class CitiesController {

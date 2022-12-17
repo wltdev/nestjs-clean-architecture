@@ -1,8 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing'
 
-import { City } from '../@core/entities/city.entity'
+import { City } from '@core/entities/city.entity'
+
 import { GetAllCitiesUseCase } from '../useCases/cities/GetAllCitiesUseCase/GetAllCitiesUseCase'
-import { cityStub } from './../useCases/cities/stubs/cities.stub'
+import { cityStub } from '../useCases/cities/stubs/cities.stub'
 import { CitiesController } from './cities.controller'
 
 jest.mock('../useCases/cities/GetAllCitiesUseCase/GetAllCitiesUseCase.ts')

@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing'
 
-import { City } from '../../../@core/entities/city.entity'
+import { City } from '@core/entities/city.entity'
+
 import { cityStub } from '../stubs/cities.stub'
 import { GetAllCitiesUseCase } from './GetAllCitiesUseCase'
 

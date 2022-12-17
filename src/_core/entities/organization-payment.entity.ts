@@ -9,6 +9,4 @@ export class OrganizationPayment {
   description: string
   category: string
   type: string
-  readonly createdAt: Date
-  readonly updatedAt: Date
 }

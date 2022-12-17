@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 
-import { IDatabaseService } from '../../../@core/abstracts/database-service.abstract'
-import { City } from '../../../@core/entities/city.entity'
+import { IDatabaseService } from '@core/abstracts/database-service.abstract'
+import { City } from '@core/entities/city.entity'
 
 @Injectable()
 export class GetAllCitiesUseCase {
