@@ -13,6 +13,10 @@ export class MongoDBGenericRepository<T> implements IGenericRepository<T> {
     return this.repository.findById(id).populate(this.populateOnFind).exec()
   }
 
+  findOne(params: any): Promise<T | unknown> {
+    return this.repository.findOne(params).populate(this.populateOnFind).exec()
+  }
+
   create(item: T): Promise<T> {
     return this.repository.create(item)
   }

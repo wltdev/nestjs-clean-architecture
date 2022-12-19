@@ -1,7 +1,7 @@
 import { faker } from '@faker-js/faker'
 
 import { CreateCityDto } from '@core/dtos/city.dto'
-import { City, Province } from '@core/infra/database/mongodb/schemas'
+import { City, Province } from '@core/entities'
 
 export const provinceStub = (): Province => ({
   name: 'Minas Gerais',

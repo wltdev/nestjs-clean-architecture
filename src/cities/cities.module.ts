@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common'
 
 import { DatabaseService } from '@core/infra/database/database.service.module'
 
-import { GetAllCitiesUseCase } from '@/useCases/cities/GetAllCitiesUseCase/GetAllCitiesUseCase'
+import { GetAllCitiesUseCase } from '@/use-cases/cities/getAllCitiesUseCase/GetAllCitiesUseCase'
 
 import { CitiesController } from './cities.controller'
 

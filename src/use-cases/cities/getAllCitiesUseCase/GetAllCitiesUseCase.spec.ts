@@ -30,7 +30,7 @@ describe('GetAllCitiesUseCase', () => {
   describe('execute', () => {
     let cities: City[]
 
-    beforeEach(async () => {
+    beforeAll(async () => {
       cities = await getAllCitiesUseCase.execute()
     })
 
@@ -39,8 +39,8 @@ describe('GetAllCitiesUseCase', () => {
     })
 
     it('should return cities', () => {
-      const stub = cityStub()
-      expect(cities).toEqual([stub])
+      const items = cityStub()
+      expect(cities).toEqual([items])
     })
   })
 })

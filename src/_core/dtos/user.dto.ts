@@ -2,22 +2,22 @@ import { IsString, IsNotEmpty, IsDate, IsBoolean } from 'class-validator'
 
 import { PartialType } from '@nestjs/mapped-types'
 
+import { City } from '../entities'
+
 export class CreateUserDto {
   @IsString()
   @IsNotEmpty()
   name: string
 
   @IsString()
-  @IsNotEmpty()
-  cityId: string
+  city: string | City
 
   @IsString()
   @IsNotEmpty()
   email: string
 
   @IsString()
-  @IsNotEmpty()
-  password: string
+  password?: string
 
   // @IsString()
   photo: string
@@ -35,16 +35,16 @@ export class CreateUserDto {
   weight: string
 
   @IsString()
-  heartTeam: string
+  heart_team: string
 
   @IsString()
-  foot: string
+  preferred_foot: string
 
   @IsString()
-  facebookId: string
+  facebook_id?: string
 
   @IsBoolean()
-  isCompleted: boolean
+  is_completed: boolean
 }
 
 export class UpdateUserDto extends PartialType(CreateUserDto) {}
