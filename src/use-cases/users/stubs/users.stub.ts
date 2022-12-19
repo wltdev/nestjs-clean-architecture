@@ -15,7 +15,14 @@ export const userStub = (): User => ({
   is_completed: true,
   photo: faker.internet.avatar(),
   position: 'midfielder',
-  weight: '80'
+  weight: '80',
+  isValidPassword: async () => true
+})
+
+export const loggedUserStub = (): User => ({
+  ...userStub(),
+  password: '123456',
+  facebook_id: faker.database.mongodbObjectId()
 })
 
 export const createUserStub = (): CreateUserDto => {

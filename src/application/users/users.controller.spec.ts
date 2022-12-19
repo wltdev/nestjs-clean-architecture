@@ -3,11 +3,11 @@ import { Test, TestingModule } from '@nestjs/testing'
 import { User } from '@core/entities/user.entity'
 
 import { GetUserUseCase } from '@/use-cases/users/getUserUseCase/GetUserUseCase'
+import { userStub } from '@/use-cases/users/stubs/users.stub'
 
-import { userStub } from './../use-cases/users/stubs/users.stub'
 import { UsersController } from './users.controller'
 
-jest.mock('../use-cases/users/getUserUseCase/GetUserUseCase.ts')
+jest.mock('@/use-cases/users/getUserUseCase/GetUserUseCase.ts')
 
 describe('UsersController', () => {
   let controller: UsersController
@@ -23,6 +23,10 @@ describe('UsersController', () => {
     getUserUseCase = moduleRef.get<GetUserUseCase>(GetUserUseCase)
   })
 
+  afterAll(() => {
+    jest.clearAllMocks()
+  })
+
   it('controller should be defined', () => {
     expect(controller).toBeDefined()
   })
@@ -32,7 +36,7 @@ describe('UsersController', () => {
   })
 
   describe('GetOne', () => {
-    let user: User | unknown
+    let user: User
 
     beforeAll(async () => {
       user = await controller.getOne(userStub().email)

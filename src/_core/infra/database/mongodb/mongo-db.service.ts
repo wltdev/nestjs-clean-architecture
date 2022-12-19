@@ -27,6 +27,6 @@ export class MongoDBService implements IDatabaseService, OnApplicationBootstrap 
   onApplicationBootstrap() {
     this.provinces = new MongoDBGenericRepository<Province>(this.provinceRepository)
     this.cities = new MongoDBGenericRepository<City>(this.cityRepository)
-    this.users = new MongoDBGenericRepository<User>(this.userRespository)
+    this.users = new MongoDBGenericRepository<User>(this.userRespository, ['city'])
   }
 }

@@ -2,17 +2,18 @@ import { Test, TestingModule } from '@nestjs/testing'
 
 import { City } from '@core/entities/city.entity'
 
-import { GetAllCitiesUseCase } from '../use-cases/cities/getAllCitiesUseCase/GetAllCitiesUseCase'
-import { cityStub } from '../use-cases/cities/stubs/cities.stub'
+import { GetAllCitiesUseCase } from '@/use-cases/cities/getAllCitiesUseCase/GetAllCitiesUseCase'
+import { cityStub } from '@/use-cases/cities/stubs/cities.stub'
+
 import { CitiesController } from './cities.controller'
 
-jest.mock('../use-cases/cities/getAllCitiesUseCase/GetAllCitiesUseCase.ts')
+jest.mock('@/use-cases/cities/getAllCitiesUseCase/GetAllCitiesUseCase.ts')
 
 describe('CitiesController', () => {
   let controller: CitiesController
   let getAllCitiesUseCase: GetAllCitiesUseCase
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
       controllers: [CitiesController],
       providers: [GetAllCitiesUseCase]

@@ -2,9 +2,9 @@ import { Module } from '@nestjs/common'
 
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
-import { AuthModule } from './auth/auth.module'
-import { CitiesModule } from './cities/cities.module'
-import { UsersModule } from './users/users.module'
+import { AuthModule } from './application/auth/auth.module'
+import { CitiesModule } from './application/cities/cities.module'
+import { UsersModule } from './application/users/users.module'
 
 @Module({
   imports: [CitiesModule, AuthModule, UsersModule],
