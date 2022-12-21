@@ -1,27 +1,26 @@
 import 'dotenv/config'
+import { MongooseModule } from '@nestjs/mongoose'
 import { seeder } from 'nestjs-seeder'
 
-import { MongooseModule } from '@nestjs/mongoose'
-
-import { City, CitySchema } from './_core/infra/database/mongodb/schemas/city.schema'
+import { City, CitySchema } from '@infrastructure/database/mongodb/schemas/city.schema'
 import {
   OrganizationUser,
   OrganizationUserSchema
-} from './_core/infra/database/mongodb/schemas/organization-user.schema'
+} from '@infrastructure/database/mongodb/schemas/organization-user.schema'
 import {
   Organization,
   OrganizationSchema
-} from './_core/infra/database/mongodb/schemas/organization.schema'
+} from '@infrastructure/database/mongodb/schemas/organization.schema'
 import {
   Province,
   ProvinceSchema
-} from './_core/infra/database/mongodb/schemas/province.schema'
-import { User, UserSchema } from './_core/infra/database/mongodb/schemas/user.schema'
-import { CitySeeder } from './_core/infra/database/mongodb/seeders/cities.seed'
-import { OrganizationUserSeeder } from './_core/infra/database/mongodb/seeders/organizations-users.seed'
-import { OrganizationSeeder } from './_core/infra/database/mongodb/seeders/organizations.seed'
-import { ProvinceSeeder } from './_core/infra/database/mongodb/seeders/provinces.seed'
-import { UsersSeeder } from './_core/infra/database/mongodb/seeders/users.seed'
+} from '@infrastructure/database/mongodb/schemas/province.schema'
+import { User, UserSchema } from '@infrastructure/database/mongodb/schemas/user.schema'
+import { CitySeeder } from '@infrastructure/database/mongodb/seeders/cities.seed'
+import { OrganizationUserSeeder } from '@infrastructure/database/mongodb/seeders/organizations-users.seed'
+import { OrganizationSeeder } from '@infrastructure/database/mongodb/seeders/organizations.seed'
+import { ProvinceSeeder } from '@infrastructure/database/mongodb/seeders/provinces.seed'
+import { UsersSeeder } from '@infrastructure/database/mongodb/seeders/users.seed'
 
 seeder({
   imports: [

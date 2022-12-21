@@ -1,10 +1,9 @@
-import { hash } from 'bcrypt'
-import { Model, Types } from 'mongoose'
-import { Seeder } from 'nestjs-seeder'
-
 import { faker } from '@faker-js/faker'
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
+import { hash } from 'bcrypt'
+import { Model, Types } from 'mongoose'
+import { Seeder } from 'nestjs-seeder'
 
 import { User } from '../schemas/user.schema'
 

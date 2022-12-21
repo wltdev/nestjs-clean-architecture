@@ -1,9 +1,8 @@
-import { Model, Types } from 'mongoose'
-import { Seeder } from 'nestjs-seeder'
-
 import { faker } from '@faker-js/faker'
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
+import { Model, Types } from 'mongoose'
+import { Seeder } from 'nestjs-seeder'
 
 import { Organization } from '../schemas/organization.schema'
 

@@ -1,8 +1,7 @@
-import { Model, Types } from 'mongoose'
-import { Seeder } from 'nestjs-seeder'
-
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
+import { Model, Types } from 'mongoose'
+import { Seeder } from 'nestjs-seeder'
 
 import { City } from '../schemas/city.schema'
 

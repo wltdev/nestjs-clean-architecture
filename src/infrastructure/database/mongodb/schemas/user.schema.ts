@@ -1,7 +1,6 @@
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { hash, compare } from 'bcrypt'
 import mongoose, { Document } from 'mongoose'
-
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
 import { City } from './city.schema'
 

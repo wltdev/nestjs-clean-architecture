@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 
-import { MongoDBModule } from './mongodb/mongo-db.module'
+import { MongoDBModule } from './mongodb/mongodb.module'
 
 @Module({
   imports: [MongoDBModule],
