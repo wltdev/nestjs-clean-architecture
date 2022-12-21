@@ -48,6 +48,7 @@
     "@types/bcrypt": "^5.0.0",
     "@types/express": "^4.17.13",
     "@types/jest": "28.1.8",
+    "@types/module-alias": "^2.0.1",
     "@types/node": "^16.0.0",
     "@types/passport-local": "^1.0.34",
     "@types/supertest": "^2.0.11",
@@ -85,12 +86,16 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node",
     "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/../src/$1",
-      "^@core/(.*)$": "<rootDir>/../src/_core/$1"
+      "^@application/(.*)$": "<rootDir>/../src/application/$1",
+      "^@domain/(.*)$": "<rootDir>/../src/domain/$1",
+      "^@infrastructure/(.*)$": "<rootDir>/../src/infrastructure/$1",
+      "^@presentation/(.*)$": "<rootDir>/../src/presentation/$1"
     }
   },
   "_moduleAliases": {
-    "@": "dist",
-    "@core": "dist/_core"
+    "@application": "dist/application",
+    "@domain": "dist/domain",
+    "@infrastructure": "dist/infrastructure",
+    "@presentation": "dist/presentation"
   }
 }

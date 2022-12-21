@@ -12,9 +12,15 @@
     "baseUrl": "./",
     "moduleResolution": "node",
     "paths": {
-      "@/*": ["src/*"],
-      "@core/*": ["src/_core/*"]
+      "@application/*": ["src/application/*"],
+      "@domain/*": ["src/domain/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@presentation/*": ["src/presentation/*"]
     },
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ],
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
